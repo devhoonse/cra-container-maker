@@ -1,0 +1,32 @@
+version: '3'
+services:
+  react:
+    container_name: ReactDevServer
+    environment:
+      WATCHPACK_POLLING: "true"
+    build:
+      context: .
+      dockerfile: DockerfileDev
+    working_dir: /app
+    volumes:
+      - source: .
+        target: "/app"
+        type: bind
+      - "/app/node_modules"
+    expose:
+      - ${CONTAINER_PORT}
+    ports:
+      - "0.0.0.0:${CONTAINER_PORT}:${HOST_PORT}"
+  test:
+    build:
+      context: '.'
+      dockerfile: DockerfileDev
+    container_name: ReactTestExecutor
+    working_dir: /app
+    volumes:
+      - source: .
+        target: "/app"
+        type: bind
+        read_only: false
+      - "/app/node_modules"
+    command: ['npm','run','test']
