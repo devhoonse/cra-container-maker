@@ -17,12 +17,12 @@ cp ./bundle/DockerfileDev $OUTPUT_DIRECTORY/DockerfileDev
 cp ./bundle/docker-compose-dev.yml $OUTPUT_DIRECTORY/docker-compose.yml
 
 # STEP 2. RUN the Container to execute create-react-app
-docker-compose -f docker-compose.yml up -d cra
+docker-compose -f docker-compose.yml up --build -d cra
 
 # STEP 3. COPY CRA Project files inside the Container to your Output Directory
-docker cp createReactAppExecutor:/app/.gitignore $OUTPUT_DIRECTORY/.gitignore
-docker cp createReactAppExecutor:/app/README.md $OUTPUT_DIRECTORY/README.md
-docker cp createReactAppExecutor:/app/package-lock.json $OUTPUT_DIRECTORY/package-lock.json
-docker cp createReactAppExecutor:/app/package.json $OUTPUT_DIRECTORY/package.json
-docker cp createReactAppExecutor:/app/public $OUTPUT_DIRECTORY/public
-docker cp createReactAppExecutor:/app/src $OUTPUT_DIRECTORY/src
+docker cp createReactAppExecutor:/app/cra/.gitignore $OUTPUT_DIRECTORY/.gitignore
+docker cp createReactAppExecutor:/app/cra/README.md $OUTPUT_DIRECTORY/README.md
+docker cp createReactAppExecutor:/app/cra/package-lock.json $OUTPUT_DIRECTORY/package-lock.json
+docker cp createReactAppExecutor:/app/cra/package.json $OUTPUT_DIRECTORY/package.json
+docker cp createReactAppExecutor:/app/cra/public $OUTPUT_DIRECTORY/public
+docker cp createReactAppExecutor:/app/cra/src $OUTPUT_DIRECTORY/src

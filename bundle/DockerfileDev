@@ -1,6 +1,6 @@
 FROM node:16.17.1-alpine
 
-WORKDIR /app
+WORKDIR /app/cra
 ENV PATH /app/node_modules/.bin:$PATH
 
 COPY package.json ./
