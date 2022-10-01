@@ -7,12 +7,12 @@ services:
     build:
       context: .
       dockerfile: DockerfileDev
-    working_dir: /app/cra
+    working_dir: /opt/project
     volumes:
       - source: .
-        target: "/app/cra"
+        target: "/opt/project"
         type: bind
-      - "/app/cra/node_modules"
+      - "/opt/project/node_modules"
     expose:
       - ${CONTAINER_PORT}
     ports:
@@ -22,11 +22,11 @@ services:
       context: '.'
       dockerfile: DockerfileDev
     container_name: ReactTestExecutor
-    working_dir: /app/cra
+    working_dir: /opt/project
     volumes:
       - source: .
-        target: "/app/cra"
+        target: "/opt/project"
         type: bind
         read_only: false
-      - "/app/cra/node_modules"
+      - "/opt/project/node_modules"
     command: ['npm','run','test']
