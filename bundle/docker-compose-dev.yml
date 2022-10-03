@@ -8,6 +8,7 @@ services:
       context: .
       dockerfile: DockerfileDev
     working_dir: /opt/project
+    command: ["npm", "start"]
     volumes:
       - source: .
         target: "/opt/project"
@@ -29,4 +30,4 @@ services:
         type: bind
         read_only: false
       - "/opt/project/node_modules"
-    command: ['npm','run','test']
+    command: ["npm", "run", "test"]

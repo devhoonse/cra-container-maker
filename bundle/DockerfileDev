@@ -5,5 +5,3 @@ ENV PATH /opt/project/node_modules/.bin:$PATH
 
 COPY package.json ./
 RUN npm install
-
-CMD ["npm", "start"]
