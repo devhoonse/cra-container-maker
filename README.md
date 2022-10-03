@@ -63,7 +63,7 @@ OUTPUT_DIRECTORY=./myCRA
 생성된 `CRA` 프로젝트 템플릿에 적용할 설정을 지정합니다.  
 1. 이 템플릿은 `create-react-app@4.0.3` 의 기본 템플릿을 커스텀한 것입니다.  
    원본 템플릿에 대해서는 아래 문서를 참고해주세요.
-   > https://github.com/facebook/create-react-app/tree/v4.0.3/packages/cra-template
+   > https://github.com/facebook/create-react-app/tree/v4.0.3/packages/cra-template-typescript
 2. 템플릿의 자세한 커스텀 방법에 대해서는 아래 문서를 참고해주세요.  
    > https://create-react-app.dev/docs/custom-templates
 
@@ -88,8 +88,11 @@ OUTPUT_DIRECTORY=./myCRA
          "@testing-library/jest-dom": "^5.11.4",
          "@testing-library/react": "^11.1.0",
          "@testing-library/user-event": "^12.1.10",
-         "react": "^17.0.2",
-         "react-dom": "^17.0.2",
+         "@types/node": "^12.0.0",
+         "@types/react": "^17.0.0",
+         "@types/react-dom": "^17.0.0",
+         "@types/jest": "^26.0.15",
+         "typescript": "^4.1.2",
          "web-vitals": "^1.0.1"
       },
       "eslintConfig": {
@@ -97,6 +100,7 @@ OUTPUT_DIRECTORY=./myCRA
       }
    }
 }
+
 ```
 
 ## 2. Run
@@ -124,3 +128,6 @@ wsl ./createReactAppViaDocker.sh
 - ReactTestExecutor : React 테스트 서버  
 
 각각의 컨테이너 내부로 접근하여 React 개발에 활용해 주시면 됩니다. 
+
+## 1. WebStorm
+> https://www.jetbrains.com/help/webstorm/node-with-docker.html

@@ -24,5 +24,6 @@ docker cp createReactAppExecutor:/app/cra/.gitignore $OUTPUT_DIRECTORY/.gitignor
 docker cp createReactAppExecutor:/app/cra/README.md $OUTPUT_DIRECTORY/README.md
 docker cp createReactAppExecutor:/app/cra/package-lock.json $OUTPUT_DIRECTORY/package-lock.json
 docker cp createReactAppExecutor:/app/cra/package.json $OUTPUT_DIRECTORY/package.json
+docker cp createReactAppExecutor:/app/cra/tsconfig.json $OUTPUT_DIRECTORY/tsconfig.json
 docker cp createReactAppExecutor:/app/cra/public $OUTPUT_DIRECTORY/public
 docker cp createReactAppExecutor:/app/cra/src $OUTPUT_DIRECTORY/src

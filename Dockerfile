@@ -7,4 +7,4 @@ COPY cra-template-custom/ ./cra-template-custom/
 RUN npm install -g create-react-app
 RUN npx create-react-app cra --template file:./cra-template-custom
 
-CMD ["ls", "-ahl"]
+CMD ["watch", "ls", "-ahl"]
